@@ -53,7 +53,12 @@ if ($action == "register") {
         $_SESSION["user_id"] = $user->id;
         $_SESSION["username"] = $user->username;
         $_SESSION["role"] = $user->role;
-        header("Location: ../View/dashboard.php");
+        
+        if ($user->role === 'member') {
+            header("Location: ../View/memberDashboard.php");
+        } else {
+            header("Location: ../View/dashboard.php");
+        }
     } else {
         header("Location: ../View/login.php?error=invalid");
     }
