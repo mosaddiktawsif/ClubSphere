@@ -33,3 +33,12 @@ CREATE TABLE IF NOT EXISTS tournaments (
     created_by INT,
     FOREIGN KEY (created_by) REFERENCES users(id) ON DELETE SET NULL
 );
+
+CREATE TABLE IF NOT EXISTS user_profiles (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    gaming_preferences VARCHAR(255),
+    in_game_rankings VARCHAR(255),
+    social_media_links VARCHAR(255),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
