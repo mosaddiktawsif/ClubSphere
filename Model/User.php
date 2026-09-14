@@ -83,6 +83,35 @@ class User {
         return $stmt->execute();
     }
 
+    function getProfile($id) {
+        $query = "SELECT gaming_preferences, in_game_rankings, social_media_links FROM user_profiles WHERE user_id = :id LIMIT 1";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    function updateGamingProfile($id, $preferences, $rankings, $socialLinks) {
+        $checkQuery = "SELECT id FROM user_profiles WHERE user_id = :id";
+        $checkStmt = $this->conn->prepare($checkQuery);
+        $checkStmt->bindParam(":id", $id);
+        $checkStmt->execute();
+
+        if ($checkStmt->rowCount() > 0) {
+            $query = "UPDATE user_profiles SET gaming_preferences = :pref, in_game_rankings = :ranks, social_media_links = :social WHERE user_id = :id";
+        } else {
+            $query = "INSERT INTO user_profiles (user_id, gaming_preferences, in_game_rankings, social_media_links) VALUES (:id, :pref, :ranks, :social)";
+        }
+
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":id", $id);
+        $stmt->bindParam(":pref", $preferences);
+        $stmt->bindParam(":ranks", $rankings);
+        $stmt->bindParam(":social", $socialLinks);
+        
+        return $stmt->execute();
+    }
+
     
 
     function getPendingUsers() {

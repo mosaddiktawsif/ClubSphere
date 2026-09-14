@@ -33,3 +33,34 @@ CREATE TABLE IF NOT EXISTS tournaments (
     created_by INT,
     FOREIGN KEY (created_by) REFERENCES users(id) ON DELETE SET NULL
 );
+
+CREATE TABLE IF NOT EXISTS user_profiles (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    gaming_preferences VARCHAR(255),
+    in_game_rankings VARCHAR(255),
+    social_media_links VARCHAR(255),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS teams (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(150) NOT NULL,
+    logo_url VARCHAR(255) DEFAULT 'default_logo.png',
+    captain_id INT NOT NULL,
+    stats_w INT DEFAULT 0,
+    stats_d INT DEFAULT 0,
+    stats_l INT DEFAULT 0,
+    achievements TEXT,
+    FOREIGN KEY (captain_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS team_applications (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    team_id INT NOT NULL,
+    user_id INT NOT NULL,
+    status ENUM('pending', 'accepted', 'rejected') NOT NULL DEFAULT 'pending',
+    applied_at DATETIME NOT NULL,
+    FOREIGN KEY (team_id) REFERENCES teams(id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);

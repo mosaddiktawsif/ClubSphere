@@ -13,6 +13,7 @@ $database = new Database();
 $db = $database->connect();
 $user = new User($db);
 $userData = $user->findById($_SESSION["user_id"]);
+$userProfile = $user->getProfile($_SESSION["user_id"]) ?: ['gaming_preferences' => '', 'in_game_rankings' => '', 'social_media_links' => ''];
 
 include __DIR__ . '/partials/header.php';
 ?>
@@ -37,6 +38,17 @@ include __DIR__ . '/partials/header.php';
         <label>Email</label>
         <input type="email" name="email" value="<?php echo htmlspecialchars($userData["email"]); ?>" required>
 
+        <?php if ($userData["role"] === 'member'): ?>
+            <label>Gaming Preferences (e.g., FPS, MOBA)</label>
+            <input type="text" name="gaming_preferences" value="<?php echo htmlspecialchars($userProfile["gaming_preferences"]); ?>">
+
+            <label>In-game Rankings (e.g., Valorant: Diamond, CSGO: LEM)</label>
+            <input type="text" name="in_game_rankings" value="<?php echo htmlspecialchars($userProfile["in_game_rankings"]); ?>">
+
+            <label>Social Media Links (Twitter, Discord, etc.)</label>
+            <input type="text" name="social_media_links" value="<?php echo htmlspecialchars($userProfile["social_media_links"]); ?>">
+        <?php endif; ?>
+
         <button type="submit">Save Changes</button>
     </form>
 
@@ -45,7 +57,13 @@ include __DIR__ . '/partials/header.php';
         <button type="submit" class="danger">Delete Account</button>
     </form>
 
-    <p><a href="dashboard.php">Back to Dashboard</a></p>
+    <p>
+        <?php if ($userData["role"] === 'member'): ?>
+            <a href="memberDashboard.php">Back to Dashboard</a>
+        <?php else: ?>
+            <a href="dashboard.php">Back to Dashboard</a>
+        <?php endif; ?>
+    </p>
 </div>
 
 <?php include __DIR__ . '/partials/footer.php'; ?>
