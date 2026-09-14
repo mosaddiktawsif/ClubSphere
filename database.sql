@@ -54,3 +54,13 @@ CREATE TABLE IF NOT EXISTS teams (
     achievements TEXT,
     FOREIGN KEY (captain_id) REFERENCES users(id) ON DELETE CASCADE
 );
+
+CREATE TABLE IF NOT EXISTS team_applications (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    team_id INT NOT NULL,
+    user_id INT NOT NULL,
+    status ENUM('pending', 'accepted', 'rejected') NOT NULL DEFAULT 'pending',
+    applied_at DATETIME NOT NULL,
+    FOREIGN KEY (team_id) REFERENCES teams(id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);

@@ -83,15 +83,35 @@ include __DIR__ . '/partials/header.php';
         <div class="card wide" style="background: transparent; box-shadow: none;">
             <h2 style="text-align: center; font-size: 28px; font-weight: 400;">Registered Teams</h2>
             
+            <?php if (isset($_GET["success"]) && $_GET["success"] == "applied"): ?>
+                <p class="msg success">Successfully applied to join the team. Waiting for captain's approval.</p>
+            <?php endif; ?>
+            <?php if (isset($_GET["error"]) && $_GET["error"] == "already_applied"): ?>
+                <p class="msg error">You have already applied to this team.</p>
+            <?php endif; ?>
+
             <div class="teams-grid">
                 <?php if (empty($teams)): ?>
                     <p style="grid-column: 1 / -1; text-align: center; color: var(--muted);">No teams found.</p>
                 <?php else: ?>
                     <?php foreach ($teams as $team): ?>
+                        <?php $status = $teamModel->getApplicationStatus($_SESSION["user_id"], $team["id"]); ?>
                         <div class="team-item">
-                            <!-- Placeholder for actual logo; in a real scenario this points to uploads folder -->
+                            <!-- Placeholder for actual logo -->
                             <div style="font-size: 40px; margin-bottom: 10px;">🛡️</div>
-                            <div class="team-name"><?php echo htmlspecialchars($team["name"]); ?></div>
+                            <div class="team-name" style="margin-bottom: 10px;"><?php echo htmlspecialchars($team["name"]); ?></div>
+                            
+                            <?php if ($status === 'pending'): ?>
+                                <span class="badge upcoming">Pending</span>
+                            <?php elseif ($status === 'accepted'): ?>
+                                <span class="badge ongoing">Member</span>
+                            <?php else: ?>
+                                <form action="../Controllers/TeamActionController.php" method="POST" style="margin:0;">
+                                    <input type="hidden" name="action" value="apply_team">
+                                    <input type="hidden" name="team_id" value="<?php echo $team["id"]; ?>">
+                                    <button type="submit" style="margin-top:5px; padding: 6px; font-size: 12px; background-color: var(--blue);">Apply to Join</button>
+                                </form>
+                            <?php endif; ?>
                         </div>
                     <?php endforeach; ?>
                 <?php endif; ?>
