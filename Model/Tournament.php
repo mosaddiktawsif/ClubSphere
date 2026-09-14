@@ -1,5 +1,4 @@
 <?php
-
 class Tournament {
 
     private $conn;
@@ -37,6 +36,13 @@ class Tournament {
         $stmt->bindParam(":status", $status);
         $stmt->bindParam(":id", $id);
         return $stmt->execute();
+    }
+    
+    public function getUpcomingTournaments() {
+        $query = "SELECT * FROM " . $this->table . " WHERE start_date >= CURDATE() ORDER BY start_date ASC";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
 ?>
