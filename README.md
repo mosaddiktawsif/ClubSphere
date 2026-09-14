@@ -26,19 +26,19 @@ Built strictly using the **MVC (Model-View-Controller)** architecture, the syste
 ## 🏛️ Academic Context & Team Details
 
 * **Institution:** American International University-Bangladesh (AIUB)[cite: 36]
-* **Faculty:** Faculty of Science and Technology[cite: 36]
-* **Department:** Department of Computer Science[cite: 36]
-* **Course:** CSC 3215: Web Technologies[cite: 36]
-* **Semester:** Summer 2025-26[cite: 36]
-* **Group No:** 1[cite: 36]
-* **Section:** F[cite: 36]
+* **Faculty:** Faculty of Science and Technology
+* **Department:** Department of Computer Science
+* **Course:** CSC 3215: Web Technologies
+* **Semester:** Summer 2025-26
+* **Group No:** 1
+* **Section:** F
 
 ### Project Team Members
 | SL | Student ID | Name | Role |
 | :--- | :--- | :--- | :--- |
-| 1 | `22-46726-1` | Mosaddik Al Tawsif[cite: 36] | Group Leader[cite: 36] |
-| 2 | `23-51517-1` | MD Tasnim Ul Islam[cite: 36] | Member[cite: 36] |
-| 3 | `22-46057-1` | Rezuanul Islam Fahim[cite: 36] | Member[cite: 36] |
+| 1 | `22-46726-1` | Mosaddik Al Tawsif | Group Leader |
+| 2 | `23-51517-1` | MD Tasnim Ul Islam | Member |
+| 3 | `22-46057-1` | Rezuanul Islam Fahim | Member] |
 
 ---
 
