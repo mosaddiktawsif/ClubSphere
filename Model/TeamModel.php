@@ -40,5 +40,15 @@ class TeamModel {
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         return $row ? $row['status'] : null;
     }
+
+    function getUserTeam($userId) {
+        $query = "SELECT t.* FROM teams t 
+                  JOIN team_applications ta ON t.id = ta.team_id 
+                  WHERE ta.user_id = :user_id AND ta.status = 'accepted' LIMIT 1";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":user_id", $userId);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }
 ?>

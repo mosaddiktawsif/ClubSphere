@@ -70,7 +70,7 @@ include __DIR__ . '/partials/header.php';
         <div class="sidebar-nav">
             <a href="memberDashboard.php">Dashboard</a>
             <a href="teams_list.php" class="active">Club Teams</a>
-            <a href="#">Tournaments</a>
+            <a href="member_tournaments.php">Tournaments</a>
             <a href="#">Events</a>
             <a href="#">Notification <span class="text-red">•</span></a>
             <a href="#">Reports</a>
