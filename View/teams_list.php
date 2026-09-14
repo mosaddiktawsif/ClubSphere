@@ -71,9 +71,6 @@ include __DIR__ . '/partials/header.php';
             <a href="memberDashboard.php">Dashboard</a>
             <a href="teams_list.php" class="active">Club Teams</a>
             <a href="member_tournaments.php">Tournaments</a>
-            <a href="#">Events</a>
-            <a href="#">Notification <span class="text-red">•</span></a>
-            <a href="#">Reports</a>
             <a href="edit_profile.php">User Profile</a>
             <a href="../logout.php">Logout</a>
         </div>
@@ -97,7 +94,6 @@ include __DIR__ . '/partials/header.php';
                     <?php foreach ($teams as $team): ?>
                         <?php $status = $teamModel->getApplicationStatus($_SESSION["user_id"], $team["id"]); ?>
                         <div class="team-item">
-                            <!-- Placeholder for actual logo -->
                             <div style="font-size: 40px; margin-bottom: 10px;">🛡️</div>
                             <div class="team-name" style="margin-bottom: 10px;"><?php echo htmlspecialchars($team["name"]); ?></div>
                             

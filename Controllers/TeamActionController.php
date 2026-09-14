@@ -19,7 +19,6 @@ if ($action == "apply_team") {
     $userId = $_SESSION["user_id"];
 
     if ($teamId) {
-        // check if already applied
         $status = $teamModel->getApplicationStatus($userId, $teamId);
         
         if ($status === null) {

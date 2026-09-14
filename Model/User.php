@@ -92,17 +92,14 @@ class User {
     }
 
     function updateGamingProfile($id, $preferences, $rankings, $socialLinks) {
-        // Check if profile exists
         $checkQuery = "SELECT id FROM user_profiles WHERE user_id = :id";
         $checkStmt = $this->conn->prepare($checkQuery);
         $checkStmt->bindParam(":id", $id);
         $checkStmt->execute();
 
         if ($checkStmt->rowCount() > 0) {
-            // Update
             $query = "UPDATE user_profiles SET gaming_preferences = :pref, in_game_rankings = :ranks, social_media_links = :social WHERE user_id = :id";
         } else {
-            // Insert
             $query = "INSERT INTO user_profiles (user_id, gaming_preferences, in_game_rankings, social_media_links) VALUES (:id, :pref, :ranks, :social)";
         }
 

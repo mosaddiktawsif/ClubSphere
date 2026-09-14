@@ -20,8 +20,6 @@ $db = $database->connect();
 $user = new User($db);
 $userData = $user->findById($_SESSION["user_id"]);
 
-// We need a getTournamentById in Tournament.php, let's just do a direct query for now or add it later.
-// I will quickly run a PDO fetch here since Model/Tournament.php doesn't have a getById yet.
 $stmt = $db->prepare("SELECT * FROM tournaments WHERE id = :id LIMIT 1");
 $stmt->bindParam(":id", $_GET["id"]);
 $stmt->execute();
@@ -89,9 +87,6 @@ include __DIR__ . '/partials/header.php';
             <a href="memberDashboard.php">Dashboard</a>
             <a href="teams_list.php">Club Teams</a>
             <a href="member_tournaments.php" class="active">Tournaments</a>
-            <a href="#">Events</a>
-            <a href="#">Notification <span class="text-red">•</span></a>
-            <a href="#">Reports</a>
             <a href="edit_profile.php">User Profile</a>
             <a href="../logout.php">Logout</a>
         </div>

@@ -77,9 +77,6 @@ include __DIR__ . '/partials/header.php';
             <a href="memberDashboard.php">Dashboard</a>
             <a href="teams_list.php">Club Teams</a>
             <a href="member_tournaments.php" class="active">Tournaments</a>
-            <a href="#">Events</a>
-            <a href="#">Notification <span class="text-red">•</span></a>
-            <a href="#">Reports</a>
             <a href="edit_profile.php">User Profile</a>
             <a href="../logout.php">Logout</a>
         </div>
