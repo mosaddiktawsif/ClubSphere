@@ -39,6 +39,7 @@ Built strictly using the **MVC (Model-View-Controller)** architecture, the syste
 | 1 | `22-46726-1` | Mosaddik Al Tawsif | Group Leader |
 | 2 | `23-51517-1` | MD Tasnim Ul Islam | Member |
 | 3 | `22-46057-1` | Rezuanul Islam Fahim | Member] |
+| 4 | `23-54248-3	`|  ARITRA DEY | Member] |
 
 ---
 
