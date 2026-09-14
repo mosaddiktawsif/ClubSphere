@@ -32,7 +32,8 @@ include __DIR__ . '/partials/header.php';
             </div>
         </div>
         <div class="sidebar-nav">
-            <a href="memberDashboard.php" class="active">Club Teams</a>
+            <a href="memberDashboard.php" class="active">Dashboard</a>
+            <a href="teams_list.php">Club Teams</a>
             <a href="#">Tournaments</a>
             <a href="#">Events</a>
             <a href="#">Notification <span class="text-red">•</span></a>

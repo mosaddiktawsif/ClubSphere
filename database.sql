@@ -42,3 +42,15 @@ CREATE TABLE IF NOT EXISTS user_profiles (
     social_media_links VARCHAR(255),
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
+
+CREATE TABLE IF NOT EXISTS teams (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(150) NOT NULL,
+    logo_url VARCHAR(255) DEFAULT 'default_logo.png',
+    captain_id INT NOT NULL,
+    stats_w INT DEFAULT 0,
+    stats_d INT DEFAULT 0,
+    stats_l INT DEFAULT 0,
+    achievements TEXT,
+    FOREIGN KEY (captain_id) REFERENCES users(id) ON DELETE CASCADE
+);
