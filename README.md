@@ -17,15 +17,15 @@
 
 ## 📖 About The Project
 
-Managing competitive gaming events and club operations on university campuses currently involves a scattered approach utilizing social media, messaging apps, and spreadsheets[cite: 36]. **ClubSphere** solves this by providing a unified, role-based platform to handle all esports activities in one place[cite: 36]. 
+Managing competitive gaming events and club operations on university campuses currently involves a scattered approach utilizing social media, messaging apps, and spreadsheets. **ClubSphere** solves this by providing a unified, role-based platform to handle all esports activities in one place
 
-Built strictly using the **MVC (Model-View-Controller)** architecture, the system cleanly separates database operations (Models) from the user interface (Views) and logic routing (Controllers)[cite: 36]. This ensures scalable management of teams, events, and club resources, providing a structured environment tailored specifically for university esports communities[cite: 36].
+Built strictly using the **MVC (Model-View-Controller)** architecture, the system cleanly separates database operations (Models) from the user interface (Views) and logic routing (Controllers). This ensures scalable management of teams, events, and club resources, providing a structured environment tailored specifically for university esports communities.
 
 ---
 
 ## 🏛️ Academic Context & Team Details
 
-* **Institution:** American International University-Bangladesh (AIUB)[cite: 36]
+* **Institution:** American International University-Bangladesh (AIUB)
 * **Faculty:** Faculty of Science and Technology
 * **Department:** Department of Computer Science
 * **Course:** CSC 3215: Web Technologies
@@ -38,40 +38,40 @@ Built strictly using the **MVC (Model-View-Controller)** architecture, the syste
 | :--- | :--- | :--- | :--- |
 | 1 | `22-46726-1` | Mosaddik Al Tawsif | Group Leader |
 | 2 | `23-51517-1` | MD Tasnim Ul Islam | Member |
-| 3 | `22-46057-1` | Rezuanul Islam Fahim | Member] |
-| 4 | `23-54248-3	`|  ARITRA DEY | Member] |
+| 3 | `22-46057-1` | Rezuanul Islam Fahim | Member |
+| 4 | `23-54248-3	`|  ARITRA DEY | Member |
 
 ---
 
 ## 🛡️ System Features & User Roles
 
-The platform categorizes users into four primary types: **Admin**, **Moderator**, **Team Captain**, and **General Member**[cite: 36].
+The platform categorizes users into four primary types: **Admin**, **Moderator**, **Team Captain**, and **General Member**.
 
-### 🌐 Common Features (Available to All Users)[cite: 36]
-* **Authentication:** Login to the system and logout from the system[cite: 36].
-* **User Registration:** Register a new account[cite: 36].
-* **Account Management:** Change or reset password, and manage profile information (view, edit, delete)[cite: 36].
-* **Dashboard:** Access a personalized dashboard after login[cite: 36].
+### 🌐 Common Features (Available to All Users)
+* **Authentication:** Login to the system and logout from the system.
+* **User Registration:** Register a new account.
+* **Account Management:** Change or reset password, and manage profile information (view, edit, delete).
+* **Dashboard:** Access a personalized dashboard after login.
 
-### 1. 👑 Administrator Features[cite: 36]
-* **Membership Approval & Role Assignment:** Exclusively approve or reject incoming membership requests and assign system roles (Admin, Moderator, Captain, Member) to specific users[cite: 36].
-* **Financial Ledger Management:** Record club income (sponsorships, entry fees) and expenses (logistics, equipment), and generate overall club financial summaries[cite: 36].
-* **Tournament Creation Engine:** Formulate new events by defining game titles, dates, rulesets, and initializing the automated knockout bracket system[cite: 36].
+### 1. 👑 Administrator Features
+* **Membership Approval & Role Assignment:** Exclusively approve or reject incoming membership requests and assign system roles (Admin, Moderator, Captain, Member) to specific users.
+* **Financial Ledger Management:** Record club income (sponsorships, entry fees) and expenses (logistics, equipment), and generate overall club financial summaries.
+* **Tournament Creation Engine:** Formulate new events by defining game titles, dates, rulesets, and initializing the automated knockout bracket system.
 
-### 2. 🛡️ Moderator Features[cite: 36]
-* **Match Result Verification:** Review match outcome screenshots submitted by players and finalize the official scores to update the live leaderboards[cite: 36].
-* **Inventory Tracking:** Add new gaming equipment to the database, track which members are using specific items, and update equipment condition statuses[cite: 36].
-* **Announcement Broadcasting:** Post global news, event updates, and schedule changes directly to the public announcement board[cite: 36].
+### 2. 🛡️ Moderator Features
+* **Match Result Verification:** Review match outcome screenshots submitted by players and finalize the official scores to update the live leaderboards.
+* **Inventory Tracking:** Add new gaming equipment to the database, track which members are using specific items, and update equipment condition statuses.
+* **Announcement Broadcasting:** Post global news, event updates, and schedule changes directly to the public announcement board.
 
-### 3. ⚔️ Team Captain Features[cite: 36]
-* **Roster Assembly & Oversight:** Create a new team entity, invite specific club members to join the roster, and remove inactive players[cite: 36].
-* **Tournament Registration Submission:** Select an active tournament and submit the finalized team roster for official event enrollment[cite: 36].
-* **Score Proof Submission:** Self-report match outcomes and upload required post-match screenshot evidence into the system for Moderator review[cite: 36].
+### 3. ⚔️ Team Captain Features
+* **Roster Assembly & Oversight:** Create a new team entity, invite specific club members to join the roster, and remove inactive players.
+* **Tournament Registration Submission:** Select an active tournament and submit the finalized team roster for official event enrollment.
+* **Score Proof Submission:** Self-report match outcomes and upload required post-match screenshot evidence into the system for Moderator review.
 
-### 4. 👤 General Member Features[cite: 36]
-* **Gaming Profile Customization:** Update personal gaming preferences, input current in-game rankings, and link external social media accounts[cite: 36].
-* **Team Join Requests:** Browse the list of existing club teams and submit applications to Team Captains to join a competitive roster[cite: 36].
-* **Live Bracket & Schedule Tracking:** Access real-time, dynamic views of tournament schedules, knockout brackets, and individual team statistics without administrative edit rights[cite: 36].
+### 4. 👤 General Member Features
+* **Gaming Profile Customization:** Update personal gaming preferences, input current in-game rankings, and link external social media accounts.
+* **Team Join Requests:** Browse the list of existing club teams and submit applications to Team Captains to join a competitive roster.
+* **Live Bracket & Schedule Tracking:** Access real-time, dynamic views of tournament schedules, knockout brackets, and individual team statistics without administrative edit rights.
 
 ---
 
